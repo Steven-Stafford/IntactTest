@@ -8,7 +8,7 @@ namespace IntactTest
 {
     public interface IWordFrequency
     {
-        string word { get; set; }
-        int frequency { get; set; }
+        string Word { get; set; }
+        int Frequency { get; set; }
     }
 }

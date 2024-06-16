@@ -38,7 +38,7 @@ namespace IntactTest
             var mostFrequentWords = allwordFrequencies.OrderByDescending(words => words.Value)
                 .ThenBy(words => words.Key)
                 .Take(number)
-                .Select(words => new WordFrequency { word = words.Key, frequency = words.Value })
+                .Select(words => new WordFrequency { Word = words.Key, Frequency = words.Value })
                 .ToList<IWordFrequency>();
             return mostFrequentWords;
         }
@@ -51,7 +51,9 @@ namespace IntactTest
             }
 
             if (!Regex.IsMatch(text, @"^[a-zA-Z\s]+$"))
+            {
                 throw new ArgumentException("Text contains non-alphabetic characters.");
+            }
 
 
             var wordCounts = new Dictionary<string, int>();

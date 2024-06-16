@@ -45,12 +45,12 @@ namespace IntactTest.Tests
 
             Assert.That(result.Count, Is.EqualTo(number));
 
-            Assert.That(result[0].word, Is.EqualTo("the"));
-            Assert.That(result[0].frequency, Is.EqualTo(2));
-            Assert.That(result[1].word, Is.EqualTo("lake"));
-            Assert.That(result[1].frequency, Is.EqualTo(1));
-            Assert.That(result[2].word, Is.EqualTo("over"));
-            Assert.That(result[2].frequency, Is.EqualTo(1));
+            Assert.That(result[0].Word, Is.EqualTo("the"));
+            Assert.That(result[0].Frequency, Is.EqualTo(2));
+            Assert.That(result[1].Word, Is.EqualTo("lake"));
+            Assert.That(result[1].Frequency, Is.EqualTo(1));
+            Assert.That(result[2].Word, Is.EqualTo("over"));
+            Assert.That(result[2].Frequency, Is.EqualTo(1));
         }
 
 

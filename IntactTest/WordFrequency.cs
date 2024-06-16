@@ -8,7 +8,7 @@ namespace IntactTest
 {
     public class WordFrequency : IWordFrequency
     {
-        public string word {  get; set; }
-        public int frequency { get; set; }
+        public string Word {  get; set; }
+        public int Frequency { get; set; }
     }
 }
