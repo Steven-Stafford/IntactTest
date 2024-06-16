@@ -45,7 +45,7 @@ namespace IntactTest
         {
             if (string.IsNullOrEmpty(text))
             {
-                throw new ArgumentException("Text must not be null or empty");
+                throw new ArgumentException("Text must not be null or empty.");
             }
 
             var wordCounts = new Dictionary<string, int>();
