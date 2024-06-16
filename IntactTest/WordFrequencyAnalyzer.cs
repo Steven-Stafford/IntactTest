@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace IntactTest
@@ -35,6 +36,7 @@ namespace IntactTest
             var allwordFrequencies = GetWordCounts(text);
 
             var mostFrequentWords = allwordFrequencies.OrderByDescending(words => words.Value)
+                .ThenBy(words => words.Key)
                 .Take(number)
                 .Select(words => new WordFrequency { word = words.Key, frequency = words.Value })
                 .ToList<IWordFrequency>();
@@ -47,6 +49,10 @@ namespace IntactTest
             {
                 throw new ArgumentException("Text must not be null or empty.");
             }
+
+            if (!Regex.IsMatch(text, @"^[a-zA-Z\s]+$"))
+                throw new ArgumentException("Text contains non-alphabetic characters.");
+
 
             var wordCounts = new Dictionary<string, int>();
             var words = text.ToLower().Split(' ');
